@@ -1,0 +1,342 @@
+html {
+    box-sizing: border-box;
+    height: 100%;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    align-items: center;
+    background-image: url('sig.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    font-family: 'Dosis', sans-serif;
+    font-display: swap;
+    height: inherit;
+    justify-content: center;
+    padding: 150px;
+    background-color: white;
+    color: black;
+}
+
+body.dark-theme {
+    background-color: #333;
+    color: white;
+}
+
+.wrapper {
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.01);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
+    color: #232323;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    background: rgba(255, 255, 255, 0.30);
+    border: 1px solid rgba(255, 255, 255, 0.34);
+    flex-basis: 400px;
+    height: 540px;
+    padding: 20px 35px;
+}
+
+.screen {
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.01);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
+    color: #232323;
+    font-size: 35px;
+    overflow: auto;
+    padding: 20px;
+    text-align: right;
+    width: 326px;
+}
+
+.calc-button-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 5% 0;
+}
+
+.calc-button {
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.01);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
+    color: #232323;
+    flex-basis: 20%;
+    font-family: inherit;
+    font-size: 24px;
+    height: 65px;
+}
+
+.calc-button:last-child {
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.01);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
+    color: #fff;
+    background: #28bdd7;
+}
+
+.calc-button:last-child:hover {
+    background-color: inherit;
+    color: inherit;
+}
+
+.calc-button:hover {
+    background-color: inherit;
+}
+
+.calc-button:active {
+    background-color: #ffef78;
+}
+
+.calc-button:last-child:active {
+    background-color: cyan;
+}
+
+
+.double {
+    flex-basis: 47%;
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.01);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
+    color: #232323;
+    font-family: inherit;
+    font-size: 24px;
+    height: 65px;
+}
+
+.double:last-child {
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.01);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
+    color: #fff;
+    background: #28bdd7;
+}
+
+.double:hover {
+    background-color: inherit;
+}
+
+.double:last-child:hover {
+    background-color: inherit;
+    color: inherit;
+}
+
+.double:active {
+    background-color: #ffef78;
+}
+
+.double:last-child:active {
+    background-color: greenyellow;
+}
+
+.operator-selected {
+    background-color: #ff78ed !important;
+    color: #d61616 !important;
+}
+
+.menu-bar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    transition: all 0.3s ease;
+    padding-top: 20px;
+    z-index: 1000;
+}
+
+body.dark-theme .menu-bar {
+    background-color: #111;
+    color: white;
+}
+
+.menu-bar.open {
+    left: 0;
+}
+
+.menu-bar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-bar ul li {
+    padding: 15px;
+    border-bottom: 1px solid #444;
+}
+
+body.dark-theme .menu-bar ul li {
+    border-bottom: 1px solid white;
+}
+
+.menu-bar ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+body.dark-theme .menu-bar ul li a {
+    color: white;
+}
+
+.menu-bar .close-btn {
+    position: absolute;
+    top: 10px;
+    left: 220px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+.hamburger {
+    display: block;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 10px;
+    border-radius: 20%;
+    background-color: #fff;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+body.dark-theme .hamburger {
+    background-color: #333;
+    color: #fff;
+}
+
+.hamburger.hidden {
+    display: none;
+}
+
+.hamburger:hover {
+    background-color: #e281d2f8;
+    color: #232323;
+}
+
+@media (max-width: 768px),
+(min-width: 769px) {
+    .menu-bar {
+        left: -250px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.hidden {
+        display: none;
+    }
+}
+
+.history-list.hidden {
+    display: none;
+}
+
+
+#background-upload {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+#background-upload-list {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#background-upload-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+#background-upload+label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+
+.calc-button,
+.double,
+.menu-bar,
+.screen {
+    background: rgba(255, 255, 255, 0.75);
+    color: #232323;
+}
+
+body.dark-theme .calc-button,
+body.dark-theme .double,
+body.dark-theme .menu-bar,
+body.dark-theme .screen {
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+}
+
+
+.calc-button:active,
+.double:active {
+    background-color: #ffef78;
+}
+
+body.dark-theme .calc-button:active,
+body.dark-theme .double:active {
+    background-color: #ff78ed;
+}
+
+.calc-button:last-child {
+    background: #28bdd7;
+    color: #fff;
+}
+
+body.dark-theme .calc-button:last-child {
+    background: #28bdd7;
+    color: #fff;
+}
+
+.calc-button:last-child:hover {
+    background-color: #28bdd7;
+    color: white;
+}
+
+.calc-button:last-child:active {
+    background-color: cyan;
+}

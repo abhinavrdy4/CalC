@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="menu-bar">
+        <span class="close-btn" onclick="toggleMenu()">&#10005;</span>
+        <ul>
+            <li><a href="#" onclick="toggleHistory()">History</a>
+                <ul class="history-list hidden">
+                    <!-- To be added.....-->
+                </ul>
+            </li>
+            <li><a href="#" onclick="toggleSound()">Sound Effects On/Off</a></li>
+            <li>
+                <a href="#" onclick="toggleBackgroundUpload()">Change Background</a>
+                <ul id="background-upload-list" class="hidden">
+                    <li><input type="file" id="background-upload" accept="image/*" onchange="uploadBackgroundImage()">
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#" onclick="toggleTheme()">Light/Dark Theme</a></li>
+        </ul>
+    </div>
+
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+    <div class="wrapper">
+        <section class="screen">
+            0
+        </section>
+
+        <section class="calc-buttons">
+            <div class="calc-button-row">
+                <button class="double">
+                    C
+                </button>
+                <button class="calc-button">
+                    &larr;
+                </button>
+                <button class="calc-button">
+                    &divide;
+                </button>
+            </div>
+            <div class="calc-button-row">
+                <button class="calc-button">
+                    7
+                </button>
+                <button class="calc-button">
+                    8
+                </button>
+                <button class="calc-button">
+                    9
+                </button>
+                <button class="calc-button">
+                    &times;
+                </button>
+            </div>
+            <div class="calc-button-row">
+                <button class="calc-button">
+                    4
+                </button>
+                <button class="calc-button">
+                    5
+                </button>
+                <button class="calc-button">
+                    6
+                </button>
+                <button class="calc-button">
+                    &minus;
+                </button>
+            </div>
+            <div class="calc-button-row">
+                <button class="calc-button">
+                    1
+                </button>
+                <button class="calc-button">
+                    2
+                </button>
+                <button class="calc-button">
+                    3
+                </button>
+                <button class="calc-button">
+                    &plus;
+                </button>
+            </div>
+            <div class="calc-button-row">
+                <button class="double">
+                    0
+                </button>
+                <button class="double">
+                    &equals;
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
